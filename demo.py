@@ -2,9 +2,9 @@ from flask import Flask, render_template, request
 import numpy as np
 import model
 
-demo = Flask(__name__)
+app = Flask(__name__)
 
-@demo.route("/", methods = ['GET','POST'])
+@app.route("/", methods = ['GET','POST'])
 
 def home_page():
     if request.method == 'POST':
@@ -29,5 +29,5 @@ def home_page():
 
 
 if __name__ == '__main__':
-    demo.run(debug=True)
+    app.run(debug=True)
     
