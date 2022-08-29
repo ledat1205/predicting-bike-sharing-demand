@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Model deployment</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <table>
+            <tr>
+                <td>
+                    <h1 style="color: white;"> Predicting bike sharing demand</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="id" placeholder="id" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label  for="weathersit" style="color: white;">Season: </label>
+                    <select name="season" >
+                        <option value=1>Spring</option>
+                        <option value=2>Summer</option>
+                        <option value=3>Autumn</option>
+                        <option value=4>Winter</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label  for="weathersit" style="color: white;">Year: </label>
+                    <select name="yr" >
+                        <option value=0>2011</option>
+                        <option value=1>2012</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label  for="weathersit" style="color: white;">Month: </label>
+                    <select name="mnth" >
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label  for="weathersit" style="color: white;">Hour: </label>
+                    <select name="hr" >
+                        <option value=0>0</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                        <option value=13>13</option>
+                        <option value=14>14</option>
+                        <option value=15>15</option>
+                        <option value=16>16</option>
+                        <option value=17>17</option>
+                        <option value=18>18</option>
+                        <option value=19>19</option>
+                        <option value=20>20</option>
+                        <option value=21>21</option>
+                        <option value=22>22</option>
+                        <option value=23>23</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>       
+                <td>
+                    <label  for="holiday" style="color: white;">Is a holiday?</label>
+                    <select name="holiday" >
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    <label  for="holiday" style="color: white;">Is a weekday?</label>
+                    <select name="weekday" >
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label  for="workingday" style="color: white;">Is a working?</label>
+                    <select name="workingday" > 
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label  for="weathersit" style="color: white;">Wheather type: </label>
+                    <select name="weathersit" > 
+                        <option value=1>good</option>
+                        <option value=2>mist</option>
+                        <option value=3>pour</option>
+                        <option value=4>rain</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="temp"  placeholder="temperature" step="any" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="atemp"  placeholder="atemp"step="any"  required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="hum"  placeholder="humidity" step="any" required min=0>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" name="windspeed" placeholder="windspeed" step="any" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input style="margin-left: 5px" type="submit">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="pred" style="color: white; font-size: 25px;"> {{ prediction_text }}</div>
+                </td>
+            </tr>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>
