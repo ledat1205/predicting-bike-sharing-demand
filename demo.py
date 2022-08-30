@@ -1,3 +1,4 @@
+from threading import local
 from flask import Flask, render_template, request
 import numpy as np
 import model
@@ -23,8 +24,9 @@ def home_page():
         windspeed = request.form['windspeed'] 
         mark = np.array([[id, season, mnth, yr, hr, holiday, weekday, workingday, weathersit, temp, atemp, hum, windspeed]],dtype=float)
         pred = model.predict(mark)
-    
-    return render_template("index.html", prediction_text = "Prediction is {}".format(int(pred)))
+        prediction_text = "Prediction is {}".format(int(pred))
+
+    return render_template("index.html", **locals())
 
 
 
